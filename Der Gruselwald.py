@@ -1,5 +1,6 @@
 import time
 import random as rnd
+import msvcrt as m
 
 damage = rnd.randint(1,5)
 
@@ -11,6 +12,11 @@ print ("... Willkommen im Gruselwald ...")
 time.sleep(1)
 print ("Bitte achte beim Schreiben auf deine Rechtschreibung...")
 time.sleep(1)
+
+def Ende():
+    print("Drücke eine Taste um das Spiel zu beenden....")
+    m.getch()
+    quit()
 
 answer = input("Du stehst vor einer Abzweigung, wohin gehst du? (rechts/links) ")
 
@@ -40,11 +46,13 @@ if answer.lower().strip() == "rechts":
                                     answer = input ("Du folgst dem Weg... am Ende des Weges zeigt sich der Ausgang des Waldes...")
                                     time.sleep(1)
                                     print ("... du hast gewonnen!!!")
+                                    Ende()
 
                                 else:
                                     print ("Du versinkst bis zum Bauch im Treibsand und dein Körper wirdvon Vögeln zerrupft... das Schild muss wohl falsch herum gehangen")
                                     time.sleep(1)
                                     print("Ende")
+                                    Ende()
 
                             else:
                                 if answer == "ja sagen" :
@@ -57,22 +65,26 @@ if answer.lower().strip() == "rechts":
                                         print ("Du läufst und stolperst über einen Stein und fällst eine Klippe hinunter. Du schlägst unten auf und stirbst")
                                         time.sleep(1)
                                         print ("Ende")
+                                        Ende()
 
                                     else:
                                         print ("Sie geht mit dir weiter und stößt dich eine Klippe runter. Du schlägst unten auf und stirbst")
                                         time.sleep(1)
                                         print ("Ende")
+                                        Ende()
 
                         else:
                             print ("Er ruft seine kleinen Zwergen Freunde und sie atackieren dich. Gegen so viele hast du keine Chance sie vernichten dich")
                             time.sleep(1)
                             print ("Ende")
+                            Ende()
 
 
                     else:
                         print ("Du pflückst dir die Beeren und ist sie. Es waren giftige Vogelbeeren, welche dich langsam und qualvoll sterben lassen")
                         time.sleep(1)
                         print ("Ende")
+                        Ende()
             else:
                 answer = input ("Du kommst zurück zum Oga und er versucht dich anzu greifen (mit der Faust kämpfen/mit dem Zauberstab kämpfen)")
                 
@@ -94,25 +106,30 @@ if answer.lower().strip() == "rechts":
                                     print ("Die Karte führt dich zum Ende des Waldes... ")
                                     time.sleep(1)
                                     print ("... du hast gewonnen!!!")
+                                    Ende()
                                 
                                 else:
                                     print ("Du bist verärgert über das geschehen und versuchst zum Anfang des Waldes zu laufen... jedoch stolperst du in eine Fütze und ertrinkst")
                                     time.sleep(1)
                                     print ("Ende")
+                                    Ende()
                             
                             else:
                                 print ("Du verirrst dich und verdurstest jämmerlich")
                                 time.sleep(1)
                                 print ("Ende")
+                                Ende()
                         
                         else:
                             print ("Du verirrst dich und verdurstest jämmerlich")
                             time.sleep(1)
                             print ("Ende")
+                            Ende()
                     else:
                         print ("Er zieht einen Dolch und ersticht dich")
                         time.sleep(1)
                         print ("Ende")
+                        Ende()
                 
                 else:
                     print (damage)
@@ -126,6 +143,7 @@ if answer.lower().strip() == "rechts":
                         print ("Er greift nach seiner Keule und erschlägt dich...")
                         time.sleep(1)
                         print ("Ende")
+                        Ende()
                         
                 
 
@@ -143,16 +161,19 @@ if answer.lower().strip() == "rechts":
                     print ("Du schüttelst die Kugel und wirst aus dem Wald teleportiert... ")
                     time.sleep(1)
                     print ("... du hast gewonnen!!!")
+                    Ende()
 
                 else:
                     print ("Das Gift ist noch nicht vollständig aus deinem Körper gewichen... kippst um und schlägst dir den Kopf auf")
                     time.sleep(1)
                     print ("Ende")
+                    Ende()
 
             else:
                 print ("Das Gift ist noch nicht vollständig aus deinem Körper gewichen... kippst um und schlägst dir den Kopf auf")
                 time.sleep(1)
                 print ("Ende")
+                Ende()
     else:
         print (damage)
         print ("damage")
@@ -165,8 +186,10 @@ if answer.lower().strip() == "rechts":
             print ("Er greift nach seiner Keule und erschlägt dich...")
             time.sleep(1)
             print ("Ende")
+            Ende()
 
 else:
     print("Du wirst von einem einem herabfallendem Ast erschlagen...")
     time.sleep(1)
     print ("Ende")
+    Ende()
